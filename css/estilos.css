@@ -1,0 +1,298 @@
+:root {
+    --primario: #9c27b0;
+    --primarioOscuro: #89119d;
+    --secundario: #ffce00;
+    --secundarioOscuro: rgb(233, 287, 2);
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincial: 'Staatliches', cursive;
+}
+
+
+/* Es importante poner el box sizing*/
+
+html {
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* Globales */
+
+body {
+    background-color: var(--primario);
+    font-size: 20.6px;
+    line-height: 20.5px;
+}
+
+p {
+    font-size: 15.8px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Tipografia */
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincial);
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30.2px;
+}
+
+h3 {
+    font-size: 20.4px;
+}
+
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 30px 0px;
+}
+
+
+/* navegacion */
+
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 25px 0px;
+    display: flex;
+    justify-content: center;
+    /* separacion de forma nueva*/
+    gap: 20px;
+}
+
+.navegacion__enlace {
+    font-family: var(--fuentePrincial);
+    color: var(--blanco);
+    font-size: 30px;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--secundario);
+}
+
+
+/* grid */
+
+.grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Productos */
+
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 10px;
+}
+
+.producto__nombre {
+    font-size: 40px;
+}
+
+.producto__precio {
+    font-size: 28px;
+    color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincial);
+    text-align: center;
+}
+
+
+/* graficos*/
+
+.grafico {
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+
+/* footer */
+
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 15px 0px;
+    margin-top: 20px;
+}
+
+.footer__texto {
+    font-family: var(--fuentePrincial);
+    text-align: center;
+    font-size: 20.2px;
+}
+
+
+/* Nosotros */
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+}
+
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }
+}
+
+
+/* Bloques */
+
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque__titulo {
+    margin: 0;
+}
+
+
+/* Pagina del producto */
+
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.formulario__campo {
+    border: 10px solid var(--primarioOscuro);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.formulario__option {
+    color: var(--negro);
+}
+
+.formulario__campo::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--blanco);
+    opacity: 1;
+    /* Firefox */
+}
+
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 20px;
+    font-family: var(--fuentePrincial);
+    padding: 20px;
+    transition: background-color .3s ease;
+    grid-column: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .formulario {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .formulario__submit {
+        grid-column: 1 / 3;
+    }
+}
+
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
